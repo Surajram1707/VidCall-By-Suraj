@@ -1,0 +1,52 @@
+<html>
+<head>
+<script src='https://meet.jit.si/external_api.js'></script>
+<link rel="shortcut icon" href="pic/icon2.png" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="stylesheet.css"/>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<title>VidCall-By Suraj</title>
+</head>
+<body >
+  <div class="stars">
+<div class="twinkling">
+<div class="clouds">
+  
+<center>
+<button id="start" type="button" class="btn btn-success" ><font size="15px"><b>Start Your Call</b></font></button>
+</center>
+<center>
+<div id="jitsi-container">
+</div>
+
+<script>
+var button = document.querySelector('#start');
+var container = document.querySelector('#jitsi-container');
+var api = null;
+
+button.addEventListener('click', () => {
+var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+var stringLength = 30;
+
+function pickRandom() {
+return possible[Math.floor(Math.random() * possible.length)];
+}
+
+var randomString = Array.apply(null, Array(stringLength)).map(pickRandom).join('');
+
+var domain = "meet.jit.si";
+var options = {
+"roomName": randomString,
+"parentNode": container,
+"width": 600,
+"height": 600,
+};
+api = new JitsiMeetExternalAPI(domain, options);
+});
+
+</script>
+</body>
+<p align="center"><b>&copy;Copyright&nbsp;<a href="index.html">www.VidCallBySuraj.com</a></b></p>
+</center>
+</div></div></div>
+</html>
